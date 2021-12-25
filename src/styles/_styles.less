@@ -1,0 +1,60 @@
+//declarations
+@import "./_varaiables.less";
+@import "./_typography.less";
+@import "./mixins/utils.less";
+
+//overrides
+@import "./overrides/_divider.less";
+@import "./overrides/_pageheader.less";
+@import "./overrides/_tabs.less";
+@import "./overrides/_stepper.less";
+@import "./overrides/_card.less";
+
+//utils
+@import "./util/_container.less";
+
+//components
+@import "./components/structures/_header.less";
+@import "./components/structures/_carousel.less";
+@import "./components/structures/_horizontal-list.less";
+@import "./components//structures/_search.less";
+@import "./components/structures/_drawer.less";
+@import "./components/structures/_message.less";
+
+//pages
+@import "./pages/_home.less";
+@import "./pages/_allcourses.less";
+@import "./pages/_login.less";
+@import "./pages/_registeration.less";
+@import "./pages/_coursedetail.less";
+@import "./pages/_courseplayer.less";
+@import "./pages/_admin.less";
+@import "./pages/_coursemanagement.less";
+@import "./pages/_ordermanagement.less";
+@import "./pages/_usermanagement.less";
+@import "./pages/_dashboard.less";
+@import "./pages/_sections.less";
+@import "./pages/_profile.less";
+
+//MediaQuery
+@import "./util/_mediaquery.less";
+#video-base {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+#video-container {
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding-top: 56.25%; /* default aspect ratio for video player */
+}
+
+#video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

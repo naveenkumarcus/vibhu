@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+  courseservice:
+    image: courseservice
+    environment:
+      NODE_ENV: production
+    env_file:
+        - ./.courseenv
+    ports:
+      - 4500:4500
+  authservice:
+    image: authservice
+    environment:
+        NODE_ENV: production
+    env_file:
+        - ./.authenv
+    ports:
+        - 5000:5000
+  userservice:
+    image: userservice
+    environment:
+        NODE_ENV: production
+    env_file:
+        - ./.userenv
+    ports:
+        - 4000:4000

@@ -1,0 +1,26 @@
+.root {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .button {
+    margin-top: 8px;
+  }
+  
+  #video-container {
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-top: 56.25%; /* default aspect ratio for video player */
+  }
+  
+  #video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }

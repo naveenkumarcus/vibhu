@@ -1,0 +1,45 @@
+.carousel {
+  &__container {
+    position: relative;
+    height: @carousel-ht;
+    background: @carousel-bg;
+    text-align: center;
+    color: @accent-clr;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    &::after {
+      content: " ";
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(320deg, #000000, transparent);
+    }
+  }
+  &__content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5%;
+    z-index: 10;
+    transition: all 0.5s;
+    > h1 {
+      // font-family: "Raleway";
+      color: @accent-clr;
+      font-size: 4rem;
+    }
+    > p {
+      text-align: left;
+    }
+  }
+  &__action {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    > button:not(:first-child) {
+      margin-left: 1rem;
+    }
+  }
+}

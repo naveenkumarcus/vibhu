@@ -1,0 +1,46 @@
+Banner 
+
+adult: false
+backdrop_path: "/9yBVqNruk6Ykrwc32qrK2TIE5xw.jpg"
+genre_ids: [14, 28, 12, 878, 53]
+id: 460465
+media_type: "movie"
+original_language: "en"
+original_title: "Mortal Kombat"
+overview: "Washed-up MMA fighter Cole Young, unaware of his heritage, and hunted by Emperor Shang Tsung's best warrior, Sub-Zero, seeks out and trains with Earth's greatest champions as he prepares to stand against the enemies of Outworld in a high stakes battle for the universe."
+popularity: 9606.216
+poster_path: "/6Wdl9N6dL0Hi0T1qJLWSz6gMLbd.jpg"
+release_date: "2021-04-07"
+title: "Mortal Kombat"
+video: false
+vote_average: 8
+vote_count: 1444
+
+
+Course Detail
+
+adult: false
+backdrop_path: "/3GW0A72MxsSgghqpjc2O2MvO8Ec.jpg"
+belongs_to_collection: null
+budget: 0
+genres: (2) [{…}, {…}]
+homepage: ""
+id: 714277
+imdb_id: "tt12844834"
+original_language: "es"
+original_title: "La Funeraria"
+overview: "Bernardo is an undertaker. He runs his mortuary business in the same house where he resides. In the front, he has his clients. And in the back, his dysfunctional family lives amongst coffins, wreaths, and the mischievous but nonviolent ghosts that visit on a daily basis. But when a malevolent entity enters the scene, it wreaks havoc on the already fractured household."
+popularity: 313.006
+poster_path: "/1rlgIzw129hEl46bFaJZ7wpEEZZ.jpg"
+production_companies: [{…}]
+production_countries: [{…}]
+release_date: "2021-04-15"
+revenue: 0
+runtime: 86
+spoken_languages: [{…}]
+status: "Released"
+tagline: "Dare you visit?"
+title: "The Funeral Home"
+video: false
+vote_average: 2.4
+vote_count: 5

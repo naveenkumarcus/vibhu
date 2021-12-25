@@ -1,0 +1,72 @@
+h1,
+h2 {
+  font-family: "Montserrat";
+  font-weight: 800;
+  font-size: 2rem;
+  margin: 0;
+}
+body {
+  font-size: 1.2rem;
+  background-color: @body-bg;
+}
+
+* {
+  ::-webkit-scrollbar {
+    width: @scroll-wd;
+    height: @scroll-ht;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: @scroll-track-clr;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: @scroll-thumb-clr;
+    border-radius: 20px;
+    z-index: -1;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: @scroll-thumb-hover-clr;
+  }
+}
+dd {
+  font-size: 1rem;
+  &::before {
+    content: "\2714";
+    color: @primary-clr;
+    margin-right: 1rem;
+    font-weight: 900;
+  }
+}
+
+article {
+  margin: 1rem;
+  max-width: 400px;
+}
+p {
+  font-size: 1rem;
+}
+
+video {
+  aspect-ratio: 9/16;
+}
+
+input,
+textarea,
+.ant-input-affix-wrapper {
+  border-radius: 0.4rem !important;
+}
+
+.va-displayfield {
+  display: flex;
+  &__key{
+    min-width: 8rem;
+  }
+  &__value{
+    margin-left: 1rem;
+  }
+}

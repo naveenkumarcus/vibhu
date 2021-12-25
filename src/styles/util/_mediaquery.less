@@ -1,0 +1,98 @@
+@media screen {
+  @media (max-width: 599px) {
+    .va_container {
+      margin: 2rem;
+      flex-wrap: wrap;
+    }
+    .va_courses {
+      flex-direction: column;
+    }
+    .ca-search {
+      width: 80%;
+    }
+    .va_login,
+    .va_registration {
+      flex-direction: column-reverse;
+      margin: 0rem;
+      padding: 1rem;
+      img {
+        height: 300px;
+    }
+    }
+    #registerForm,
+    #loginForm {
+      min-width: 18rem;
+    }
+    h1,
+    h2 {
+      font-size: 1.2rem;
+    }
+    .va_coursedetail__actions {
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-around;
+      height: 10rem;
+    }
+    .horizontal-card {
+      height: 8rem;
+      width: 10rem;
+    }
+    .va-admin {
+      padding: 1rem;
+    }
+
+    .course-management__action, .user-management__action {
+      flex-direction: column;
+      align-items: flex-end;
+      height: 70px;
+    }
+
+  }
+  @media (max-width: 799px) {
+    .va_container {
+      margin: 2rem;
+      flex-wrap: wrap;
+    }
+    .ca-search {
+      width: 80%;
+    }
+    .va_coursedetail__container {
+      position: relative;
+      max-width: 100%;
+      min-height: 25rem;
+      padding: 1rem;
+    }
+    .horizontal-card {
+      height: 10rem;
+      width: 12rem;
+    }
+
+    .va-profile{
+      &--card{
+        flex-direction: column;
+        align-items: center;
+        padding: 1% !important;
+        &__content {
+          margin-left: 0%;
+          margin-top: 10%;
+        }
+        &__password {
+          width: 90%;
+        }
+      }
+    }
+  }
+}
+// @media screen and (min-width: 600px) and (
+// @media screen and (min-width: 800px) and (max-width: 1024px) {
+//   .va_container {
+//     margin: 2rem;
+//   }
+// }
+// @media screen and (min-width: 700px) and (max-width: 1024px) {
+// }
+// @media screen and (min-width: 1025px) and (max-width: 1399px) {
+// }
+// @media screen and (min-width: 1400px) {
+// }

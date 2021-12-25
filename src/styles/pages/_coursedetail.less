@@ -1,0 +1,60 @@
+.va_coursedetail {
+  position: relative;
+  min-height: 35rem;
+  &::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(45deg, black, transparent);
+  }
+
+  &__container {
+    background: transparent;
+    max-width: 70%;
+    position: relative;
+    padding: 1rem 5rem;
+    z-index: 1000;
+
+   h1 {
+      color: @primary-clr;
+      margin: 0;
+    }
+   > p {
+      color: @accent-clr;
+    }
+  }
+  &__actions {
+    margin-top: 3rem;
+    width: 70%;
+    margin-left: 0.5rem;
+    display: flex;
+    align-items: center;
+    > * {
+      margin: 0 1rem;
+    }
+  }
+  &__detail {
+    margin: 2rem;
+  }
+}
+
+.va_coursedetail {
+  &__no-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    height: 10rem;
+    svg {
+      font-size: 4rem;
+      color: @primary-clr;
+    }
+  }
+  &__no_content {
+    display: flex;
+    justify-content: center;
+  }
+}
