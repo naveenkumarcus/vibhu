@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { HashRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import Header from "./components/layout/header";
 import { LANDING_PATH } from "./config";
 import { useEffect } from "react";
@@ -24,7 +24,7 @@ const App = () => {
 
   return (
     <>
-      <Router>
+      <Router hashType="slash">
         <Spinner />
         <Header />
         <Switch>
