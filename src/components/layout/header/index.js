@@ -7,7 +7,6 @@ import { resetUserProfile } from "../../../store/actions/user";
 import { userLogoutAction } from "../../../store/effects/user";
 import { resetRoutes, setConfigObj } from "../../../store/actions/app";
 import VAUseroptions from "../../shared/dropdown";
-import { toast } from "react-toastify";
 const { header } = config;
 
 const Header = () => {
@@ -36,7 +35,7 @@ const Header = () => {
   return (
     <header id="header" className="flex-evenly">
       <div>
-        <h1 onClick={() => toast("Hellow Vibhiu")}>{header.logo}</h1>
+        <h1>{header.logo}</h1>
       </div>
       <div className="va-header__menu">
         <Menu onClick={e => setCurrent(e.key)} selectedKeys={[current]} mode="horizontal">

@@ -6,8 +6,6 @@ import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { message } from "antd";
 import { getUserProile } from "./store/effects/user";
 import Spinner from "./components/shared/spinner";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   const { error, routes } = useSelector(({ app }) => app, shallowEqual);
@@ -36,15 +34,6 @@ const App = () => {
           ))}
         </Switch>
       </Router>
-      <ToastContainer position="top-right"
-        autoClose={2000}
-        hideProgressBar
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover />
     </>
   );
 };

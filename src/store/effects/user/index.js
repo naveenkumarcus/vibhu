@@ -6,7 +6,6 @@ import { ADMIN_ROLE, ADMIN_ROUTE, HOME_ROUTE, LOGIN_ROUTE, MY_COURSES_ROUTE } fr
 import { message } from "antd";
 import { resetRoutes } from "../../actions/app";
 import { getUserOrders } from "../order";
-import { toast } from "react-toastify";
 
 export const getUserProile = () => async (dispatch, getState) => {
   const { routes, history } = getState().app;
@@ -62,7 +61,7 @@ export const getUserDetail = id => async (dispatch, getState) => {
 export const deleteUser = payload => async dispatch => {
   try {
     await restService(environment.deleteUser, "DELETE", payload);
-    toast.success(`${payload.email} deleted sucessfully`);
+    message.success(`${payload.email} deleted sucessfully`);
     dispatch(getAllUsers());
   } catch (error) {
     console.error(error);
