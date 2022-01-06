@@ -1,12 +1,10 @@
 import { Card, Col, Descriptions, Divider, Skeleton, Row, Tag } from "antd";
-import ShakaPlayer2 from "../../components/player/shaka2";
 import LessonListforSection from "./lessonListForSection";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getCourseById } from "../../store/effects/course-detail";
 import { setSelectedLesson, setSelectedSectionFromKey } from "../../store/actions/course-detail";
 import { useParams } from "react-router-dom";
-import SamplePlayer from "../../components/player/sample";
 import MediaPlayer from "../../components/media-player";
 
 const CoursePlayer = () => {
@@ -27,12 +25,14 @@ const CoursePlayer = () => {
     if (!courseDetail?.title) {
       dispatch(getCourseById(param.id));
     }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     if (courseDetail?.sections?.length) {
       dispatch(setSelectedSectionFromKey(param.sectionId));
     }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [courseDetail.sections, param.sectionId]);
 
   useEffect(() => {
@@ -40,6 +40,7 @@ const CoursePlayer = () => {
       let _selectedSection = selectedSection.lessons.find(les => les.id === param.lessonId);
       dispatch(setSelectedLesson(_selectedSection));
     }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedSection]);
 
   useEffect(() => {
@@ -47,6 +48,7 @@ const CoursePlayer = () => {
       let _selectedSection = selectedSection.lessons.find(les => les.id === param.lessonId);
       dispatch(setSelectedLesson(_selectedSection));
     }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [param.lessonId]);
 
   return courseDetail && courseDetail?.title ? (

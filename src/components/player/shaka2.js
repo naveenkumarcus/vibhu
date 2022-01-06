@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "shaka-player/dist/controls.css";
 const shaka = require("shaka-player/dist/shaka-player.ui.js");
 var _src = "https://vibhu-courses.s3.ap-south-1.amazonaws.com/course/section-1/Lesson-1/my_video_manifest.mpd";
@@ -52,7 +52,7 @@ const ShakaPlayer2 = ({src=_src}) => {
 
     const styles = getVideoStyles(aspect, videoWidth, videoHeight);
 
-    Object.keys(styles).map(function (key, index) {
+    Object.keys(styles).forEach(function (key, index) {
       video.current.style[key] = styles[key];
     });
   };
@@ -87,6 +87,7 @@ const ShakaPlayer2 = ({src=_src}) => {
     return function () {
       document.removeEventListener("fullscreenchange", event => {});
     };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

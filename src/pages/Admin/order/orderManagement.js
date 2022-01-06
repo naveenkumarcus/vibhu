@@ -18,7 +18,6 @@ const OrderList = ({ data }) => {
 
   const onSearch = payload => {
     console.log(payload);
-    // dispatch(searchOrders(payload));
   };
 
   const actions = [
@@ -28,12 +27,6 @@ const OrderList = ({ data }) => {
       render: (text, data) => <Actions data={data} />,
     },
   ];
-
-  // useEffect(() => {
-  //   if (!list.length) {
-  //     refresAllOrder();
-  //   }
-  // }, []);
 
   const refresAllOrder = () => dispatch(getAllOrders(data.key, data.actions.list));
   const loadAllOrder = () => dispatch(getNextSetOrders(data.key, data.actions.nextList));
@@ -101,6 +94,7 @@ const OrderManagement = () => {
       dispatch(resetPendigOrders());
       dispatch(resetDeniedOrders());
     }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

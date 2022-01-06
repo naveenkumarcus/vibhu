@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
-import { Collapse, Form, Button, Table, Tag, Card } from "antd";
+import { Collapse, Form, Button, Table, Card } from "antd";
 import APP_CONSTANTS from "../../config/constants";
 import Avatar from "antd/lib/avatar/avatar";
 import { CaretRightOutlined, MailOutlined, PhoneOutlined } from "@ant-design/icons";
@@ -64,6 +64,7 @@ const Profile = () => {
 
   useEffect(() => {
     dispatch(getUserOrders());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

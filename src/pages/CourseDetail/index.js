@@ -35,6 +35,7 @@ const CourseDetail = () => {
     if (!course.title) {
       dispatch(getCourseById(param.id));
     }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

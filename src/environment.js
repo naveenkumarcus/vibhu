@@ -1,11 +1,9 @@
-import { LOGIN_ROUTE } from "./config";
 import { AdminRouteEndpoints } from "./config/admin";
 
 const AUTHN_BASE_PATH = "/api/authn/";
 const USER_BASE_PATH = "/api/user/";
 const COURSES_BASE_PATH = "/api/course/";
 const ORDER_BASE_PATH = "/api/order/";
-const UPLOAD_BASE_PATH = "/api/upload/";
 
 const environment = {
   //AUTH_SERVICE
@@ -29,6 +27,7 @@ const environment = {
 
   //SECTIONS
   createSection: COURSES_BASE_PATH + ":courseId/section/create",
+  listUsersSections: COURSES_BASE_PATH + ":courseId/user/section",
   listSections: COURSES_BASE_PATH + ":courseId/section",
   sectionById: COURSES_BASE_PATH + ":courseId/section/:sectionId",
   updateSection: COURSES_BASE_PATH + ":courseId/section/:sectionId",

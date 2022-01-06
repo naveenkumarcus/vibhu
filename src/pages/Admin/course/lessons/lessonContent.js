@@ -3,7 +3,7 @@ import { Tabs, Card, message, Button, Row, Col, Space, Form, Popconfirm } from "
 import { useDispatch, useSelector } from "react-redux";
 import { PlayCircleOutlined, BookOutlined, DeleteOutlined, FolderOpenOutlined } from "@ant-design/icons";
 import Uploader from "../../../../components/shared/uploader";
-import { updateLessonContent, uploadLessonDocument } from "../../../../store/effects/course-detail";
+import { updateLessonContent } from "../../../../store/effects/course-detail";
 // import { useState } from "react";
 import VAForm from "../../../../components/shared/form";
 import { ADMIN_CONFIG } from "../../../../config/admin";
@@ -62,10 +62,6 @@ const   LessonContent = ({ toggle }) => {
   }
   function onDrop(e) {
     console.log("Dropped files", e.dataTransfer.files);
-  }
-
-  function onUpload(file) {
-    dispatch(uploadLessonDocument(file.file, selectedLesson));
   }
 
   function saveContentEndpoint(val) {

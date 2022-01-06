@@ -4,7 +4,6 @@ import config, { HOME_ROUTE, LOGOUT_ROUTE } from "../../../config";
 import { useHistory } from "react-router-dom";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { resetUserProfile } from "../../../store/actions/user";
-import { userLogoutAction } from "../../../store/effects/user";
 import { resetRoutes, setConfigObj } from "../../../store/actions/app";
 import VAUseroptions from "../../shared/dropdown";
 const { header } = config;
@@ -18,6 +17,7 @@ const Header = () => {
 
   useEffect(() => {
     dispatch(setConfigObj({ history }));
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const menuClick = mn => {
@@ -26,10 +26,6 @@ const Header = () => {
       dispatch(resetRoutes());
     }
     history.push(mn.path);
-  };
-
-  const logout = () => {
-    dispatch(userLogoutAction());
   };
 
   return (

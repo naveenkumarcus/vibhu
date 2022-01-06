@@ -1,5 +1,3 @@
-import { HeartOutlined, MoreOutlined, ShoppingCartOutlined } from "@ant-design/icons";
-import { Tooltip } from "antd";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
@@ -32,6 +30,7 @@ const AllCourses = () => {
       setCourses(new Array(10).fill({ loading: true }));
     }
     dispatch(resetCourseDetail());
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onSearch = payload => {

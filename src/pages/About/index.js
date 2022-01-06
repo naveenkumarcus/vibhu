@@ -1,5 +1,3 @@
-import AppCarousel from "../../components/shared/carousel"
-
 const About = () => {
     return <>
     <iframe title="VibhuAbout" style={{ height: "100vh"}} src="http://vibhuacademy.com/" width="100%" />

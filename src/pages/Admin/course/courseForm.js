@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Form, Button, Row, Col, Space, Card } from "antd";
 import getFields from "../../../components/shared/fields";
 import VAForm from "../../../components/shared/form";
@@ -13,7 +13,7 @@ const CourseForm = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const { id } = useParams();
-  // const [displayFields, setDisplayFields] = useState({});
+
   const course = useSelector(({ course }) => course.selectedCourse, shallowEqual);
 
   const onFinish = values => {
@@ -28,6 +28,7 @@ const CourseForm = () => {
     return function () {
       dispatch(resetSelectedCourse());
     };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // useEffect(() => {

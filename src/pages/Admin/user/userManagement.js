@@ -58,6 +58,7 @@ const UserManagement = () => {
     if (!list.length) {
       refresAllUsers();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const refresAllUsers = () => dispatch(getAllUsers());
   const loadAllUsers = () => dispatch(getNextSetUsers());

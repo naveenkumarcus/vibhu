@@ -28,9 +28,11 @@ export const createSection = (courseId, payload) => async (dispatch) => {
   }
 };
 
-export const listSectionsByCourse = courseId => async (dispatch) => {
+export const listSectionsByCourse = courseId => async (dispatch, getState) => {
   try {
-    let result = await restService(environment.listSections.replace(":courseId", courseId));
+    const { user } = getState();
+    let url = user.isLoggedIn? environment.listUsersSections : environment.listSections;
+    let result = await restService(url.replace(":courseId", courseId));
     let payload = result.data;
     dispatch(setCourseSection(payload.Items));
   } catch (error) {
@@ -38,7 +40,7 @@ export const listSectionsByCourse = courseId => async (dispatch) => {
   }
 };
 
-export const updateSection = (courseId, sectionId, payload) => async (dispatch, getState) => {
+export const updateSection = (courseId, sectionId, payload) => async (dispatch) => {
   try {
     let result = await restService(environment.updateSection.replace(":courseId", courseId).replace(":sectionId", sectionId), "PUT", payload);
     dispatch(listSectionsByCourse(courseId));
@@ -50,7 +52,7 @@ export const updateSection = (courseId, sectionId, payload) => async (dispatch, 
 
 export const patchSectionPaid = (courseId, sectionId, payload) => async (dispatch) => {
   try {
-    let result = await restService(environment.patchSection.replace(":courseId", courseId).replace(":sectionId", sectionId), "PATCH", payload);
+    await restService(environment.patchSection.replace(":courseId", courseId).replace(":sectionId", sectionId), "PATCH", payload);
     dispatch(listSectionsByCourse(courseId));
     message.success("Section patched Successfully :", sectionId);
   } catch (error) {
@@ -58,7 +60,7 @@ export const patchSectionPaid = (courseId, sectionId, payload) => async (dispatc
   }
 };
 
-export const deleteSection = (courseId, sectionId) => async (dispatch, getState) => {
+export const deleteSection = (courseId, sectionId) => async (dispatch) => {
   try {
     await restService(environment.deleteSection.replace(":courseId", courseId).replace(":sectionId", sectionId), "DELETE");
     dispatch(listSectionsByCourse(courseId));
@@ -122,7 +124,7 @@ export const updateLessonContent = payload => async (dispatch, getState) => {
   }
 };
 
-export const uploadLessonDocument = (payload, lesson) => async (dispatch, getState) => {
+export const uploadLessonDocument = (payload, lesson) => async (dispatch) => {
   try {
     const { id, courseId, sectionId } = lesson;
     let formData = new FormData();

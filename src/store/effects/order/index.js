@@ -20,7 +20,7 @@ export const enrollASection = payload => async (dispatch, getState) => {
   let url = environment.enrollSection;
   await restService(url, "POST", body);
   message.success("Section enrolled successfully.");
-  // refreshOrders(0, dispatch);
+  dispatch(getUserOrders());
 };
 
 export const approveOrder = payload => async (dispatch, getState) => {

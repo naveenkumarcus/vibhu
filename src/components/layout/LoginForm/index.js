@@ -26,6 +26,7 @@ const LoginForm = () => {
 
   useEffect(() => {
     if (isLoggedIn) history.push(LANDING_PATH);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoggedIn]);
 
   return (

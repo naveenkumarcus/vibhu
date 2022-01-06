@@ -20,11 +20,12 @@ export const getUserProile = () => async (dispatch, getState) => {
   dispatch(setUserProfile({ profile }));
   dispatch(userlogin());
   dispatch(getUserOrders(profile.id));
-  if (window.location.pathname === LOGIN_ROUTE.path) history.push(redirects[environment.profile]);
+  // if (window.location.pathname === LOGIN_ROUTE.path) 
+  history.push(redirects[environment.profile]);
 };
 
 export const loginAction = payload => async dispatch => {
-  let result = await restService(environment.login, "POST", payload);
+  await restService(environment.login, "POST", payload);
   dispatch(getUserProile());
 };
 
@@ -52,7 +53,7 @@ export const registerUser = payload => async (dispatch, getState) => {
 
 export const getUserDetail = id => async (dispatch, getState) => {
   try {
-    let respo = await restService(environment.userById.replace(":id", id));
+    await restService(environment.userById.replace(":id", id));
   } catch (error) {
     console.error(error);
   }
@@ -77,6 +78,6 @@ export const userLogoutAction = () => async (dispatch, getState) => {
 };
 
 export const logoutAction = payload => async dispatch => {
-  let result = await restService(environment.logout);
+  await restService(environment.logout);
   dispatch(userLogoutAction());
 };

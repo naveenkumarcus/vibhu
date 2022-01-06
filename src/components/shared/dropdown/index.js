@@ -1,4 +1,4 @@
-import { Menu, Dropdown, message } from "antd";
+import { Menu, Dropdown } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { LOGOUT_ROUTE, USR_PROFILE } from "../../../config";
 import { useDispatch, useSelector } from "react-redux";

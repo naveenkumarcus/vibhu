@@ -27,6 +27,7 @@ const LessonForm = () => {
     return function () {
       dispatch(resetSelectedLesson());
     };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

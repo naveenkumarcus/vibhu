@@ -58,6 +58,7 @@ const CourseManagement = () => {
     return function () {
       dispatch(resetCourseDetail());
     };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const refresAllCourses = () => dispatch(getAllCourses());

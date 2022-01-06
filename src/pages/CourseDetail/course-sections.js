@@ -1,4 +1,4 @@
-import { Collapse, Image, Space, Badge, Button, Tag } from "antd";
+import { Collapse, Image, Space, Badge } from "antd";
 import React, { useEffect } from "react";
 import SectionDetail from "../Admin/course/sections/sectionDetail";
 import inprogress from "../../assets/img/brickwall.png";
@@ -9,7 +9,6 @@ import { useHistory, useParams } from "react-router";
 import { LOGIN_ROUTE } from "../../config";
 import { getCourseById } from "../../store/effects/course-detail";
 import useOrderStatus from "../../hooks/useOrderStatus";
-import { CheckCircleFilled, ClockCircleFilled } from "@ant-design/icons";
 import OrderStatus from "../../components/order-status";
 const { Panel } = Collapse;
 
@@ -62,6 +61,7 @@ const CourseSections = ({ data = [] }) => {
 
   useEffect(() => {
     if (!courseId) dispatch(getCourseById(id));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [courseId]);
 
   const getActions = section => {
