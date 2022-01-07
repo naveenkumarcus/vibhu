@@ -60,15 +60,17 @@ export const getUserOrders = id => async (dispatch, getState) => {
   dispatch(setUserOrders({ orders: response }));
 };
 
-export const getAllOrders = (key, nextAction) => async (dispatch, getState) => {
+export const getAllOrders = (key, nextAction, filter) => async (dispatch, getState) => {
   const { orderStatus } = getState().order[key];
   let payload = {
     orderStatus,
+    filter
   };
   let result = await restService(environment.listOrders, "POST", payload);
   let response = {
     list: result.data.Items,
     LastEvaluatedKey: result.data.LastEvaluatedKey || null,
+    filter
   };
 
   dispatch(nextAction(response));
@@ -90,6 +92,7 @@ export const getNextSetOrders = (key, nextAction) => async (dispatch, getState) 
   let response = {
     list: result.data.Items,
     LastEvaluatedKey: result.data.LastEvaluatedKey || null,
+    filter
   };
   dispatch(nextAction(response));
 };

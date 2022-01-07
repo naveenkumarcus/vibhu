@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
-import OrderDetail from "../../../components/order-detail";
+// import OrderDetail from "../../../components/order-detail";
 import VATable from "../../../components/shared/table";
 import { CloseCircleOutlined, CheckCircleOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, PageHeader, Popconfirm, Space, Tabs, Tooltip } from "antd";
@@ -12,12 +12,12 @@ import { resetApprovedOrders, resetDeniedOrders, resetPendigOrders } from "../..
 const { TabPane } = Tabs;
 
 const OrderList = ({ data }) => {
-  const [showDetail, setshowDetail] = useState(false);
+  // const [showDetail, setshowDetail] = useState(false);
   const dispatch = useDispatch();
   const { list, LastEvaluatedKey } = useSelector(({ order }) => order[data.key], shallowEqual);
 
-  const onSearch = payload => {
-    console.log(payload);
+  const onSearch = ({filter}) => {
+    dispatch(getAllOrders(data.key, data.actions.list, filter))
   };
 
   const actions = [
@@ -53,7 +53,7 @@ const OrderList = ({ data }) => {
         </Tooltip>
       </div>
       <VATable key={data.key} columns={ADMIN_CONFIG.order.columns} actions={actions} data={list} rowKey="orderId" />
-      <OrderDetail show={showDetail} onCallback={() => setshowDetail(!showDetail)} />
+      {/* <OrderDetail show={showDetail} onCallback={() => setshowDetail(!showDetail)} /> */}
     </InfiniteScroll>
   );
 };
