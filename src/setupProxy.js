@@ -19,25 +19,11 @@ module.exports = function (app) {
     })
   );
   app.use(
-    "/api/course/",
+    ["/api/course/", "/api/content/","/api/order/"],
     createProxyMiddleware({
-    //   target: "http://vibhu-smart-learn-alb-81055878.ap-south-1.elb.amazonaws.com",
+      // target: "http://vibhu-smart-learn-alb-81055878.ap-south-1.elb.amazonaws.com",
       target: "http://localhost:4500",
       changeOrigin: true,
     })
   );
-  app.use(
-    "/api/order/",
-    createProxyMiddleware({
-      target: "http://vibhu-smart-learn-alb-81055878.ap-south-1.elb.amazonaws.com",
-      changeOrigin: true,
-    })
-  );
-  //   app.use(
-  //     '/api/upload/',
-  //     createProxyMiddleware({
-  //       target: 'http://localhost:3080',
-  //       changeOrigin: true,
-  //     })
-  //   );
 };

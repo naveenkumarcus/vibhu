@@ -7,10 +7,10 @@ const MediaPlayer = ({ src }) => {
     <div className="player-wrapper" style={{ height: 400 }}>
       <ReactPlayer
         controls={true}
-        previewTabIndex={"1"}
+        // previewTabIndex={"1"}s
         className="react-player"
         volume={0.5}
-        url={src || "https://vibhu-courses.s3.ap-south-1.amazonaws.com/course/Ramayanam/section-1/lesson-1/my_video_manifest.mpd"}
+        url={src}
         width="100%"
         height="100%"
       />

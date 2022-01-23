@@ -285,7 +285,7 @@ export const ADMIN_CONFIG = {
           placeholder: "Please provide .mpd/.hsl endpoint.",
           rules: [
             {
-              min: 50,
+              min: 5,
               required: true,
               message: "Please provide .mpd/.hsl endpoint.",
             },
