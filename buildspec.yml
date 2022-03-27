@@ -6,34 +6,21 @@ phases:
       nodejs: 12
   pre_build:
     commands:
-    - echo Checking Docker version
-    - docker -v
     - aws --version
     - AWS_ACCOUNT_ID=116088010194
     - AWS_DEFAULT_REGION=ap-south-1
-    - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
-    - IMAGE_TAG=${COMMIT_HASH:=latest}
-    - IMAGE_REPO_NAME=vibhu-client
-    - REPOSITORY_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME
-    - echo Logging in to Amazon ECR....
-    - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+    - S3_BUCKET_NAME=vibhu-client
+    - S3_BUCKET_URI=s3://$S3_BUCKET_NAME
   build:
     commands:
+      - echo install project dependencies 
       - npm install --only=production
+      - echo invoke build
       - npm run build
-      # update the following line with the name of your own ECR repository
-      - docker build -t $REPOSITORY_URI:latest .
-      # update the following line with the URI of your own ECR repository (view the Push Commands in the console)
-      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG   post_build: 
-    commands: 
+  post_build:
+    commands:
     - echo Build completed on `date` 
-    - echo pushing to repo
-    # update the following line with the URI of your own ECR repository
-    - docker push $REPOSITORY_URI:latest
-    - docker push $REPOSITORY_URI:$IMAGE_TAG
-    - echo Writing image definitions file... 
-    #- printf '[{"ImageURI":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imageDetail.json
-    - printf '{"ImageURI":"%s"}' $REPOSITORY_URI:$IMAGE_TAG > imageDetail.json
-artifacts:
-  files:
-    - imageDetail.json
+    - echo pushing to s3
+    - aws s3 rm $S3_BUCKET_URI --recursive
+    - aws s3 cp  --recursive --acl public-read ./build $S3_BUCKET_URI
+    - echo Pushed all code to S3, completed on `date` 
