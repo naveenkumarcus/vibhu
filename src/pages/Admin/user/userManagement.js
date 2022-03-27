@@ -28,9 +28,9 @@ const UserManagement = () => {
 
     return (
       <Space size="middle">
-        <Button onClick={onEditClick} icon={<EditOutlined />} type="primary" shape="round">
+        {/* <Button onClick={onEditClick} icon={<EditOutlined />} type="primary" shape="round">
           Edit
-        </Button>
+        </Button> */}
         <Popconfirm title="Are you sure to delete this user?" onConfirm={confirm} okText="Yes" cancelText="No">
           <Button icon={<DeleteOutlined />} type="primary" shape="round">
             Delete

@@ -4,7 +4,7 @@ import { FolderAddOutlined, PlayCircleOutlined } from "@ant-design/icons";
 import HorizontalList from "../../components/shared/horizantal-list";
 import music from "../../assets/img/music.jpg";
 import APP_CONSTANTS, { MESSAGES } from "../../config/constants";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { getCourseById } from "../../store/effects/course-detail";
 import CourseSections from "./course-sections";
@@ -15,6 +15,8 @@ const CourseDetail = () => {
   const param = useParams();
   const history = useHistory();
   const dispatch = useDispatch();
+
+  const [ isLoading, setLoading] = useState(false);
 
   const course = useSelector(({ courseDetail }) => courseDetail, shallowEqual);
 
@@ -38,11 +40,15 @@ const CourseDetail = () => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    if(course.title) setLoading(false);
+  }, [course])
+
   return (
     <>
-      <div className="va_coursedetail" style={{ backgroundImage: `url(${music})` }}>
+      <div className="va_coursedetail" style={{ backgroundImage: `url(${course.bannerURL || music})` , backgroundSize: 'cover'}}>
         <div className="va_coursedetail__container">
-          <Skeleton active loading={course.title !== "" ? false : true}>
+          {/* <Skeleton active loading={isLoading}> */}
             <PageHeader onBack={() => history.goBack()} title={<h1>{course.title}</h1>} />
             <p>{course.description}</p>
             <div className="va_coursedetail__actions">
@@ -62,7 +68,7 @@ const CourseDetail = () => {
                   Download
                 </Button> */}
             </div>
-          </Skeleton>
+          {/* </Skeleton> */}
         </div>
       </div>
       <div className="va_coursedetail__detail">

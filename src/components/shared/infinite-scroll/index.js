@@ -16,7 +16,7 @@ const InfinitePageScroll = ({ next, hasMore, children, items=[] }) => {
         </p>
       }
     >
-      {children}
+      {children || null}
     </InfiniteScroll>
   );
 };

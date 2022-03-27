@@ -7,7 +7,7 @@ const CarouselCard = ({ data }) => {
   const history = useHistory();
   return (
     <>
-      <div className="carousel__container">
+      <div className="carousel__container" style={{ backgroundImage: `url(${data.bannerURL || ''})` , backgroundSize: 'cover'}}>
         <div className="carousel__content">
           <h1>{data.title}</h1>
           <p>{data.description}</p>

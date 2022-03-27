@@ -6,7 +6,7 @@ module.exports = function (app) {
     "/api/authn/",
     createProxyMiddleware({
       target: "http://vibhu-smart-learn-alb-81055878.ap-south-1.elb.amazonaws.com",
-    //   target: "http://localhost:5000",
+      // target: "http://localhost:5000",
       changeOrigin: true,
     })
   );

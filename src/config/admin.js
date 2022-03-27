@@ -189,15 +189,7 @@ export const ADMIN_CONFIG = {
         name: "description",
         label: "Description",
         placeholder: "Detailed description about course",
-      },
-      {
-        type: FIELD_CONSTANTS.UPLOAD,
-        name: "banner",
-        label: "Banner",
-        accept: ".png, .jpeg, .svg",
-        uploadText: "Click or drag file to this area to upload banner image",
-        uploadHint: "Please upload one image in one of the following formats .png, .jpeg, .svg",
-      },
+      }
     ],
   },
   section: {
@@ -308,7 +300,7 @@ export const ADMIN_CONFIG = {
         title: "Email",
         dataIndex: "email",
         key: "email",
-        render: (value, record) => <Link to={AdminRouteEndpoints.ADMIN_USER_MANAGEMENT_EDIT.replace(":id", record.id)}>{value}</Link>,
+        // render: (value, record) => <Link to={AdminRouteEndpoints.ADMIN_USER_MANAGEMENT_EDIT.replace(":id", record.id)}>{value}</Link>,
       },
       {
         title: "Phone",

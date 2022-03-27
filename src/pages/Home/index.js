@@ -16,10 +16,10 @@ const Home = () => {
   return (
     <>
       <div className="va-home-banner">
-        <Moto key={"moto_1"} text={"Nothing is more purifying than wisdom"} subText={"- Bhagavad-Gita"} />
         <div>
           <img src={logo} alt="Vibhu Academy" />
         </div>
+        <Moto key={"moto_1"} text={"Nothing is more purifying than wisdom"} subText={"- Bhagavad-Gita"} />
         <Moto key={"moto_2"} text={"ज्ञान से बढ़कर कुछ भी शुद्ध नहीं है"} subText={"- भगवद गीता"} />
       </div>
       <AppCarousel />

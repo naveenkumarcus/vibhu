@@ -24,7 +24,7 @@ const environment = {
   createCourse: COURSES_BASE_PATH + "create",
   updateCourse: COURSES_BASE_PATH + ":id",
   deleteCourse: COURSES_BASE_PATH + "delete",
-
+  uploadCourseBanner: COURSES_BASE_PATH + ":id/banner/upload",
   //SECTIONS
   createSection: COURSES_BASE_PATH + ":courseId/section/create",
   listUsersSections: COURSES_BASE_PATH + ":courseId/user/section",

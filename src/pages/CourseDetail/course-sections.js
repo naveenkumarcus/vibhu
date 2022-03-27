@@ -65,7 +65,6 @@ const CourseSections = ({ data = [] }) => {
   }, [courseId]);
 
   const getActions = section => {
-    console.log(section.isPaid, checkIfEnrolled(section.id));
     return [
     !section.isPaid ? null : <OrderStatus section={section} handleEnroll={handleEnroll} />
   ];
