@@ -19,6 +19,7 @@ import Admin from "../pages/Admin";
 import LoginForm from "../components/layout/LoginForm";
 import RegistrationForm from "../components/layout/RegisterForm";
 import Profile from "../pages/Profile";
+import Home2 from "../pages/Home2";
 
 export const LANDING_PATH = "/home";
 export const ADMIN_ROLE = "VIBHU_ADMIN";
@@ -26,7 +27,7 @@ export const ADMIN_ROLE = "VIBHU_ADMIN";
 export const HOME_ROUTE = {
   isMenu: true,
   label: "Home",
-  component: Home,
+  component: Home2,
   icon: <HomeOutlined twoToneColor={APP_CONSTANTS.colorScheme.primaryColor} />,
   key: "home",
   path: "/home",

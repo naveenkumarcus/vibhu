@@ -6,6 +6,8 @@ import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { resetUserProfile } from "../../../store/actions/user";
 import { resetRoutes, setConfigObj } from "../../../store/actions/app";
 import VAUseroptions from "../../shared/dropdown";
+import logo from "../../../assets/png/logo.png";
+
 const { header } = config;
 
 const Header = () => {
@@ -31,7 +33,8 @@ const Header = () => {
   return (
     <header id="header" className="flex-evenly">
       <div>
-        <h1>{header.logo}</h1>
+        {/* <h1>{header.logo}</h1> */}
+        <img src={logo} alt="Vibhu Academy" height={100} />
       </div>
       <div className="va-header__menu">
         <Menu onClick={e => setCurrent(e.key)} selectedKeys={[current]} mode="horizontal">

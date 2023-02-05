@@ -12,7 +12,7 @@ const DisplayField = ({ label, value }) => {
   );
 };
 
-export default function getFields(field, object = "", isDisplay = false) {
+export default function getFields(field, object = {}, isDisplay = false) {
   if (isDisplay) {
     return <DisplayField key={field.name} label={field.label} value={object[field.name]} />;
   }
