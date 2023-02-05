@@ -17,16 +17,16 @@ message.config({
 
 const setupAxiosInterceptors = store => {
   const onRequest = config => {
-    dispatch(toggleSpinner());
+    // dispatch(toggleSpinner());
     return config;
   };
   const onResponseSuccess = response => {
-    dispatch(toggleSpinner());
+    // dispatch(toggleSpinner());
     return response;
   };
 
   const onResponseError = err => {
-    dispatch(toggleSpinner());
+    // dispatch(toggleSpinner());
     let _status = err.response.status;
     if (_status === 401) {
       if (window.location.pathname !== LOGIN_ROUTE.path) store.dispatch(userLogoutAction());
